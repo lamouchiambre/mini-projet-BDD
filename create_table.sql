@@ -2,8 +2,8 @@ DROP TABLE Inventaire;
 DROP TABLE Vente;
 DROP TABLE Acteur;
 DROP TABLE Role;
-DROP TABLE Char;
-DROP TABLE Date;
+DROP TABLE Chars;
+DROP TABLE Dates;
 DROP TABLE Heure;
 DROP TABLE Costume;
 DROP TABLE Billet;
@@ -11,26 +11,38 @@ DROP TABLE Visiteur;
 DROP TABLE Promotion;
 
 CREATE TABLE Inventaire (
-    fk_acteur VARCHAR(10) FOREIGN KEY REFERENCES Acteur(pk_acteur),
-    fk_role VARCHAR(10) FOREIGN KEY REFERENCES Role(pk_role),
-    fk_char VARCHAR(10) FOREIGN KEY REFERENCES Char(pk_char),
-    fk_date VARCHAR(10) FOREIGN KEY REFERENCES Date(pk_date),
-    fk_heure VARCHAR(10) FOREIGN KEY REFERENCES Heure(pk_heure),
-    fk_costume VARCHAR(10) FOREIGN KEY REFERENCES Costume(pk_costume),
-    quantite NUMERIC(10, 0) /* i positif : ajouté à l'inventaire, si négatif : enlevé de l'inventaire */
+    fk_acteur VARCHAR(10),
+    fk_role VARCHAR(10), 
+    fk_chars VARCHAR(10), 
+    fk_dates VARCHAR(10), 
+    fk_heure VARCHAR(10), 
+    fk_costume VARCHAR(10), 
+    quantite NUMERIC(10, 0),     /* i positif : ajouté à l'inventaire, si négatif : enlevé de l'inventaire */
+    FOREIGN KEY (fk_acteur) REFERENCES Acteur(pk_acteur),
+    FOREIGN KEY (fk_role) REFERENCES Role(pk_role),
+    FOREIGN KEY (fk_chars) REFERENCES Chars(pk_chars),
+    FOREIGN KEY (fk_dates) REFERENCES Dates(pk_dates),
+    FOREIGN KEY (fk_heure) REFERENCES Heure(pk_heure),
+    FOREIGN KEY (fk_costume) REFERENCES Costume(pk_costume)
 );
 
 CREATE TABLE Ventes (
-    fk_billet VARCHAR(10) FOREIGN KEY REFERENCES Billet(pk_billet),
-    fk_promotion VARCHAR(10) FOREIGN KEY REFERENCES Promotion(pk_promotion),
-    fk_date VARCHAR(10) FOREIGN KEY REFERENCES Date(pk_date),
-    fk_heure VARCHAR(10) FOREIGN KEY REFERENCES Heure(pk_heure),
-    fk_visiteur VARCHAR(10) FOREIGN KEY REFERENCES Visiteur(pk_visiteur),
-    prix NUMERIC(10, 2)
+    fk_billet VARCHAR(10),
+    fk_promotion VARCHAR(10),
+    fk_dates VARCHAR(10),
+    fk_heure VARCHAR(10), 
+    fk_visiteur VARCHAR(10), 
+    prix NUMERIC(10, 2),
+    FOREIGN KEY (fk_billet) REFERENCES Billet(pk_billet),
+    FOREIGN KEY (fk_promotion) REFERENCES Promotion(pk_promotion),
+    FOREIGN KEY (fk_dates) REFERENCES Dates(pk_dates),
+    FOREIGN KEY (fk_heure) REFERENCES Heure(pk_heure),
+    FOREIGN KEY (fk_visiteur) REFERENCES Visiteur(pk_visiteur)
 );
 
+
 CREATE TABLE Acteur (
-    pk_acteur VARCHAR(10) FOREIGN KEY REFERENCES Acteur(pk_acteur),
+    pk_acteur VARCHAR(10) PRIMARY KEY,
     nom VARCHAR(100),
     prenom VARCHAR(100),
     age DECIMAL(2, 0),
@@ -38,19 +50,19 @@ CREATE TABLE Acteur (
 );
 
 CREATE TABLE Role (
-    pk_role VARCHAR(10) FOREIGN KEY REFERENCES Role(pk_role),
+    pk_role VARCHAR(10) PRIMARY KEY,
     nom VARCHAR(100),
     histoire VARCHAR(300)
-),
+);
 
-CREATE TABLE Char (
-    pk_char VARCHAR(10) PRIMARY KEY,
+CREATE TABLE Chars (
+    pk_chars VARCHAR(10) PRIMARY KEY,
     nom VARCHAR(100),
     theme VARCHAR(100)
 );
 
-CREATE TABLE Date (
-    pk_date VARCHAR(10) PRIMARY KEY,
+CREATE TABLE Dates (
+    pk_dates VARCHAR(10) PRIMARY KEY,
     jour VARCHAR(10),
     mois VARCHAR(10),
     annee VARCHAR(10)
@@ -68,7 +80,8 @@ CREATE TABLE Costume (
     nom VARCHAR(10),
     prix NUMERIC(10, 2),
     theme VARCHAR(100),
-    taille VARCHAR(10)
+    taille VARCHAR(10),
+    stock VARCHAR(10)
 );
 
 CREATE TABLE Billet (
@@ -78,14 +91,15 @@ CREATE TABLE Billet (
     nb_parcs VARCHAR(10),
     tarif_enfant VARCHAR(10),
     tarif_adulte VARCHAR(10),
-    date DATE,
+    dates DATE,
 );
 
 CREATE TABLE Visiteur (
     pk_visiteur VARCHAR(10) PRIMARY KEY,
     nom VARCHAR(10),
     prenom VARCHAR(10),
-    age DECIMAL(2, 0)
+    age DECIMAL(2, 0),
+    nationalite VARCHAR(100)
 );
 
 CREATE TABLE Promotion (
@@ -95,47 +109,3 @@ CREATE TABLE Promotion (
     debut DATE,
     fin DATE
 );
-
-/* Liste des Acteurs */
-/*INSERT INTO Acteur (pk_acteur, nom, prenom, age, contrat) VALUES ('', '', '', '', '');*/
-INSERT INTO Acteur (pk_acteur, nom, prenom, age, contrat) VALUES ('1', 'Jolie', 'Angelina', '45', 'CDD');
-
-/* Liste des Roles */
-/*INSERT INTO Role (pk_role, nom, histoire) VALUES ('', '', '');*/
-INSERT INTO Role (pk_role, nom, histoire) VALUES ('1', 'Princesse', 'Blanche-neige');
-
-/* Liste des Chars */
-/*INSERT INTO Char (pk_char, nom, theme) VALUES ('', '', '');*/
-INSERT INTO Char (pk_char, nom, theme) VALUES ('1', 'La Hotte du Père Noël', 'Noël');
-
-/* Liste des Dates */
-/*INSERT INTO Date (pk_date, jour, mois, annee) VALUES ('', '', '', '');*/
-INSERT INTO Date (pk_date, jour, mois, annee) VALUES ('1', '04', '11', '2017');
-
-/* Liste des Heures */
-/*INSERT INTO Heure (pk_heure, second, minute, heure) VALUES ('', '', '', '');*/
-INSERT INTO Heure (pk_heure, second, minute, heure) VALUES ('1', '42', '26', '22');
-
-/* Liste des Costumes */
-/*INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('', '', '', '', '');*/
-INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('1', 'Superman', '90', 'Super héros', '42');
-
-/* Liste des Billets */
-/*INSERT INTO Billet (pk_billet, nom, duree, nb_parcs, tarif_enfant, tarif_adulte, date) VALUES ('', '', '', '', '', '', '');*/
-INSERT INTO Billet (pk_billet, nom, duree, nb_parcs, tarif_enfant, tarif_adulte, date) VALUES ('1', 'Billet daté', '1', '2', '74', '79', '25/12/2020');
-
-/* Liste des Visiteurs */
-/*INSERT INTO Visiteur (pk_visiteur, nom, prenom, age) VALUES ('', '', '', '');*/
-INSERT INTO Visiteur (pk_visiteur, nom, prenom, age) VALUES ('1', 'Williams', 'Serena', '39');
-
-/* Liste des Promotion */
-/*INSERT INTO Promotion (pk_promotion, nom, debut, fin) VALUES ('', '', '', '');*/
-INSERT INTO Promotion (pk_promotion, nom, debut, fin) VALUES ('1', 'Noel', '1/12/2020', '31/12/2020');
-
-/* Liste des Inventaire */
-/*INSERT INTO Inventaire (fk_acteur, fk_role, fk_char, fk_date, fk_heure, fk_costume, quantite) VALUES ('', '', '', '', '', '', '');*/
-INSERT INTO Inventaire (fk_acteur, fk_role, fk_char, fk_date, fk_heure, fk_costume, quantite) VALUES ('1', '1', '1', '1', '1', '1', '25');
-
-/* Liste des Vente */
-/*INSERT INTO Vente (fk_billet, fk_promotion, fk_date, fk_visiteur, prix) VALUES ('', '', '', '', '');*/
-INSERT INTO Vente (fk_billet, fk_promotion, fk_date, fk_visiteur, prix) VALUES ('1', '1', '2', '1', '74');
