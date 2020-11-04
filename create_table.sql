@@ -67,7 +67,8 @@ CREATE TABLE Costume (
     pk_costume VARCHAR(10) PRIMARY KEY,
     nom VARCHAR(10),
     prix NUMERIC(10, 2),
-    theme VARCHAR(100)
+    theme VARCHAR(100),
+    taille VARCHAR(10)
 );
 
 CREATE TABLE Billet (
@@ -109,27 +110,27 @@ INSERT INTO Char (pk_char, nom, theme) VALUES ('1', 'La Hotte du Père Noël', '
 
 /* Liste des Dates */
 /*INSERT INTO Date (pk_date, jour, mois, annee) VALUES ('', '', '', '');*/
-INSERT INTO Date (pk_date, jour, mois, annee) VALUES ('1', '23', '09', '1998');
+INSERT INTO Date (pk_date, jour, mois, annee) VALUES ('1', '04', '11', '2017');
 
 /* Liste des Heures */
 /*INSERT INTO Heure (pk_heure, second, minute, heure) VALUES ('', '', '', '');*/
-INSERT INTO Heure (pk_heure, second, minute, heure) VALUES ('1', '', '', '');
+INSERT INTO Heure (pk_heure, second, minute, heure) VALUES ('1', '42', '26', '22');
 
 /* Liste des Costumes */
-/*INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('', '', '', '');*/
-INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('1', '', '', '');
+/*INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('', '', '', '', '');*/
+INSERT INTO Costume (pk_costume, nom, prix, theme) VALUES ('1', 'Superman', '90', 'Super héros', '42');
 
 /* Liste des Billets */
 /*INSERT INTO Billet (pk_billet, nom, duree, nb_parcs, tarif_enfant, tarif_adulte, date) VALUES ('', '', '', '', '', '', '');*/
-INSERT INTO Billet (pk_billet, nom, duree, nb_parcs, tarif_enfant, tarif_adulte, date) VALUES ('1', '', '', '', '', '', '');
+INSERT INTO Billet (pk_billet, nom, duree, nb_parcs, tarif_enfant, tarif_adulte, date) VALUES ('1', 'Billet daté', '1', '2', '74', '79', '25/12/2020');
 
 /* Liste des Visiteurs */
 /*INSERT INTO Visiteur (pk_visiteur, nom, prenom, age) VALUES ('', '', '', '');*/
-INSERT INTO Visiteur (pk_visiteur, nom, prenom, age) VALUES ('1', '', '', '');
+INSERT INTO Visiteur (pk_visiteur, nom, prenom, age) VALUES ('1', 'Williams', 'Serena', '39');
 
 /* Liste des Promotion */
 /*INSERT INTO Promotion (pk_promotion, nom, debut, fin) VALUES ('', '', '', '');*/
-INSERT INTO Promotion (pk_promotion, nom, debut, fin) VALUES ('1', '', '', '');
+INSERT INTO Promotion (pk_promotion, nom, debut, fin) VALUES ('1', 'Noel', '1/12/2020', '31/12/2020');
 
 /* Liste des Inventaire */
 /*INSERT INTO Inventaire (fk_acteur, fk_role, fk_char, fk_date, fk_heure, fk_costume, quantite) VALUES ('', '', '', '', '', '', '');*/
