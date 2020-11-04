@@ -109,3 +109,8 @@ CREATE TABLE Promotion (
     debut DATE,
     fin DATE
 );
+
+CREATE VIEW parade_Noel_2019 
+AS SELECT (Acteur.nom, Chars.nom, Role.nom, Costume.nom) 
+FROM Inventaire, Dates, Chars Acteur 
+WHERE pk_dates = fk_dates and pk_role = fk_role AND pk_acteur = fk_acteur AND pk_costume = fk_costume AND jour = "25" AND mois = "12" AND annee = "2019";
