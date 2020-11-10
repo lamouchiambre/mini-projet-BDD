@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-10T12:38:00.580Z" agent="5.0 (Windows)" etag="hhXw-_T7iRQrpAon2dx1" version="13.9.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-10T13:10:02.769Z" agent="5.0 (Windows)" etag="6ulzqHR5HHrXlroiXxHI" version="13.9.3" type="github">
   <diagram id="kXzxPUL3gQxP19GAu26x" name="Page-1">
     <mxGraphModel dx="2076" dy="1094" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -270,13 +270,13 @@
         <mxCell id="MiJdANEfadDCuratWoRW-3" value="nom" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
           <mxGeometry y="56" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="MiJdANEfadDCuratWoRW-4" value="pourcentage" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
+        <mxCell id="MiJdANEfadDCuratWoRW-4" value="prix" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
           <mxGeometry y="86" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="MiJdANEfadDCuratWoRW-5" value="début" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
+        <mxCell id="MiJdANEfadDCuratWoRW-5" value="theme" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
           <mxGeometry y="116" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="MiJdANEfadDCuratWoRW-6" value="fin" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
+        <mxCell id="MiJdANEfadDCuratWoRW-6" value="stock" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="MiJdANEfadDCuratWoRW-1">
           <mxGeometry y="146" width="160" height="30" as="geometry" />
         </mxCell>
       </root>
